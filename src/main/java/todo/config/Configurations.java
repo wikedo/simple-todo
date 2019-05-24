@@ -41,7 +41,8 @@ public class Configurations {
     }
 
     @Bean
-    TasksDAO tasksDAO() {
-        return new TasksDAOPostgres();
+    @Autowired
+    TasksDAO tasksDAO(JdbcTemplate jdbcTemplate) {
+        return new TasksDAOPostgres(jdbcTemplate);
     }
 }
