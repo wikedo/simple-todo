@@ -8,10 +8,10 @@ import java.sql.ResultSet
 val rowMapper: (ResultSet, Int) -> Task = { rs, i ->
     Task(rs.getLong("id"),
         rs.getString("text"),
-        Status.TODO)
+        Status.getById(rs.getInt("status")))
 }
 
-fun getTaskById(jdbcTemplate: JdbcTemplate, taskId: Long): Task {
+fun getTaskById(jdbcTemplate: JdbcTemplate, taskId: Long): Task? {
 
     val sql = """
         SELECT id, text, status
