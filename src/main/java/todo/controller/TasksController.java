@@ -39,7 +39,7 @@ public class TasksController {
         return null;
     }
 
-    @RequestMapping(path = "/{taskId}", method = RequestMethod.PUT)
+    @RequestMapping(path = "/{taskId}", method = RequestMethod.DELETE)
     public ResponseEntity deleteTask(@PathVariable("taskId") Long id) {
         return null;
     }
