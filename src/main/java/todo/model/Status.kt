@@ -8,6 +8,6 @@ enum class Status(val statusCode: Int) {
     CANCELLED(4);
 
     companion object {
-        fun getById(id: Int): Status = values()[id]
+        @JvmStatic fun getById(id: Int): Status = values()[id]
     }
 }
