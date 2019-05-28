@@ -24,23 +24,23 @@ public class TasksController {
         return ResponseEntity.ok(tasksService.getTaskById(id));
     }
 
-    @RequestMapping(path = "/list", method = RequestMethod.GET)
+    @RequestMapping(path = "/", method = RequestMethod.GET)
     public ResponseEntity listAllTasks() {
-        return null;
+        return ResponseEntity.ok(tasksService.listAllTasks());
     }
 
-    @RequestMapping(path = "/list", method = RequestMethod.POST)
+    @RequestMapping(path = "/", method = RequestMethod.POST)
     public ResponseEntity createTask() {
-        return null;
+        return ResponseEntity.ok(tasksService.createTask());
     }
 
     @RequestMapping(path = "/{taskId}", method = RequestMethod.PUT)
     public ResponseEntity updateTask(@PathVariable("taskId") Long id) {
-        return null;
+        return ResponseEntity.ok(tasksService.updateTask(id));
     }
 
     @RequestMapping(path = "/{taskId}", method = RequestMethod.DELETE)
     public ResponseEntity deleteTask(@PathVariable("taskId") Long id) {
-        return null;
+        return ResponseEntity.ok(tasksService.deleteTask(id));
     }
 }
