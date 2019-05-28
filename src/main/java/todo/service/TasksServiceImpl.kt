@@ -12,8 +12,8 @@ class TasksServiceImpl(private val tasksDAO: TasksDAO) : TasksService {
         return tasksDAO.listAllTasks()
     }
 
-    override fun createTask(): Task? {
-        return tasksDAO.createTask()
+    override fun createTask(task: Task): Task? {
+        return tasksDAO.createTask(task)
     }
 
     override fun updateTask(id: Long): Task? {

@@ -35,3 +35,13 @@ fun listAllTasks(jdbcTemplate: JdbcTemplate): List<Task> {
 
     return jdbcTemplate.query(sql, rowMapper)
 }
+
+fun createTask(jdbcTemplate: JdbcTemplate, task: Task): Task? {
+
+    val sql = """
+        SELECT id, text, status
+        FROM tasks
+    """
+
+    return null
+}

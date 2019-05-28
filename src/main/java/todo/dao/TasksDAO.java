@@ -9,7 +9,7 @@ public interface TasksDAO {
 
     List<Task> listAllTasks();
 
-    Task createTask();
+    Task createTask(Task task);
 
     Task updateTask(Long taskId);
 

@@ -29,7 +29,7 @@ public class TasksController {
 
     @RequestMapping(path = "/", method = RequestMethod.POST)
     public ResponseEntity createTask(@RequestBody Task task) {
-        return ResponseEntity.ok(tasksService.createTask());
+        return ResponseEntity.ok(tasksService.createTask(task));
     }
 
     @RequestMapping(path = "/{taskId}", method = RequestMethod.PUT)
