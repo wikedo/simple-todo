@@ -20,8 +20,18 @@ fun getTaskById(jdbcTemplate: JdbcTemplate, taskId: Long): Task? {
         WHERE id = ?
     """
     try {
-        return jdbcTemplate.queryForObject(sql, arrayOf(taskId), rowMapper);
+        return jdbcTemplate.queryForObject(sql, arrayOf(taskId), rowMapper)
     } catch(e: EmptyResultDataAccessException) {
         return null
     }
+}
+
+fun listAllTasks(jdbcTemplate: JdbcTemplate): List<Task> {
+
+    val sql = """
+        SELECT id, text, status
+        FROM tasks
+    """
+
+    return jdbcTemplate.query(sql, rowMapper)
 }

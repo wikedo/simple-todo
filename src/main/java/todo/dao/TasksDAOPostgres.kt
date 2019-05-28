@@ -9,7 +9,7 @@ class TasksDAOPostgres(val jdbcTemplate: JdbcTemplate): TasksDAO {
     }
 
     override fun listAllTasks(): List<Task> {
-        return ArrayList()
+        return listAllTasks(jdbcTemplate)
     }
 
     override fun createTask(): Task? {
