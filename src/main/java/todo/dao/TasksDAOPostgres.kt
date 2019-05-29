@@ -16,8 +16,8 @@ class TasksDAOPostgres(val jdbcTemplate: JdbcTemplate): TasksDAO {
         return createTask(jdbcTemplate, task)
     }
 
-    override fun updateTask(taskId: Long?): TaskApi.Out.Task? {
-        return null
+    override fun updateTask(taskId: Long, task: TaskApi.In.UpdatedTask): Int {
+        return updateTask(jdbcTemplate, taskId, task)
     }
 
     override fun deleteTask(taskId: Long): Int {

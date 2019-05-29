@@ -32,9 +32,10 @@ public class TasksController {
         return ResponseEntity.ok(tasksService.createTask(task));
     }
 
-    @RequestMapping(path = "/{taskId}", method = RequestMethod.PUT)
-    public ResponseEntity updateTask(@PathVariable("taskId") Long id) {
-        return ResponseEntity.ok(tasksService.updateTask(id));
+    @RequestMapping(path = "/{taskId}", method = RequestMethod.PUT, headers = {"Content-type=application/json"})
+    public ResponseEntity updateTask(@PathVariable("taskId") Long id,
+                                     @RequestBody TaskApi.In.UpdatedTask task) {
+        return ResponseEntity.ok(tasksService.updateTask(id, task));
     }
 
     @RequestMapping(path = "/{taskId}", method = RequestMethod.DELETE)

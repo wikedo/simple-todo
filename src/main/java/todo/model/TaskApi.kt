@@ -5,6 +5,9 @@ interface TaskApi {
     interface In {
 
         data class NewTask(val text: String)
+
+        data class UpdatedTask(val text: String, val status: Status)
+
     }
     interface Out {
 

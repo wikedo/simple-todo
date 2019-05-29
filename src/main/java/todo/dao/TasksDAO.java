@@ -11,7 +11,7 @@ public interface TasksDAO {
 
     Integer createTask(TaskApi.In.NewTask task);
 
-    TaskApi.Out.Task updateTask(Long taskId);
+    Integer updateTask(Long taskId, TaskApi.In.UpdatedTask task);
 
     Integer deleteTask(Long taskId);
 }

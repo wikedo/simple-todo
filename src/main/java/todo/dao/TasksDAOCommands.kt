@@ -59,3 +59,14 @@ fun deleteTask(jdbcTemplate: JdbcTemplate, taskId: Long): Int {
 
     return jdbcTemplate.update(sql, taskId)
 }
+
+fun updateTask(jdbcTemplate: JdbcTemplate, taskId: Long, task: TaskApi.In.UpdatedTask): Int {
+
+    val sql = """
+        UPDATE tasks
+        SET text = ?, status = ?
+        WHERE id = ?
+    """
+
+    return jdbcTemplate.update(sql, task.text, task.status.statusCode, taskId)
+}

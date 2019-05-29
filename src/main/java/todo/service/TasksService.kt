@@ -9,7 +9,7 @@ interface TasksService {
 
     fun createTask(task: TaskApi.In.NewTask): Int?
 
-    fun updateTask(id: Long): TaskApi.Out.Task?
+    fun updateTask(taskId: Long, task: TaskApi.In.UpdatedTask): Int
 
     fun deleteTask(id: Long): Int
 }
