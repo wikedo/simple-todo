@@ -36,12 +36,13 @@ fun listAllTasks(jdbcTemplate: JdbcTemplate): List<Task> {
     return jdbcTemplate.query(sql, rowMapper)
 }
 
-fun createTask(jdbcTemplate: JdbcTemplate, task: Task): Task? {
+fun createTask(jdbcTemplate: JdbcTemplate, task: Task): Int {
 
     val sql = """
-        SELECT id, text, status
-        FROM tasks
+        INSERT
+        INTO tasks (id, text, status)
+        VALUES (nextval('id_seq'), ?, ?)
     """
 
-    return null
+    return jdbcTemplate.update(sql, task.text, Status.TODO.statusCode)
 }

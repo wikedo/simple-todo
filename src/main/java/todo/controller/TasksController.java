@@ -27,7 +27,7 @@ public class TasksController {
         return ResponseEntity.ok(tasksService.listAllTasks());
     }
 
-    @RequestMapping(path = "/", method = RequestMethod.POST)
+    @RequestMapping(path = "/", method = RequestMethod.POST, headers = {"Content-type=application/json"})
     public ResponseEntity createTask(@RequestBody Task task) {
         return ResponseEntity.ok(tasksService.createTask(task));
     }

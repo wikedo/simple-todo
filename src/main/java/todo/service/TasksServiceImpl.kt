@@ -12,7 +12,7 @@ class TasksServiceImpl(private val tasksDAO: TasksDAO) : TasksService {
         return tasksDAO.listAllTasks()
     }
 
-    override fun createTask(task: Task): Task? {
+    override fun createTask(task: Task): Int {
         return tasksDAO.createTask(task)
     }
 

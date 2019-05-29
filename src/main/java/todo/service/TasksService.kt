@@ -7,7 +7,7 @@ interface TasksService {
 
     fun listAllTasks(): List<Task>
 
-    fun createTask(task: Task): Task?
+    fun createTask(task: Task): Int?
 
     fun updateTask(id: Long): Task?
 

@@ -12,7 +12,7 @@ class TasksDAOPostgres(val jdbcTemplate: JdbcTemplate): TasksDAO {
         return listAllTasks(jdbcTemplate)
     }
 
-    override fun createTask(task: Task): Task? {
+    override fun createTask(task: Task): Int {
         return createTask(jdbcTemplate, task)
     }
 
