@@ -20,7 +20,7 @@ class TasksServiceImpl(private val tasksDAO: TasksDAO) : TasksService {
         return tasksDAO.updateTask(id)
     }
 
-    override fun deleteTask(id: Long): Boolean {
+    override fun deleteTask(id: Long): Int {
         return tasksDAO.deleteTask(id)
     }
 }

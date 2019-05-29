@@ -11,5 +11,5 @@ interface TasksService {
 
     fun updateTask(id: Long): TaskApi.Out.Task?
 
-    fun deleteTask(id: Long): Boolean
+    fun deleteTask(id: Long): Int
 }

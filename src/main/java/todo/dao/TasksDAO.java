@@ -13,5 +13,5 @@ public interface TasksDAO {
 
     TaskApi.Out.Task updateTask(Long taskId);
 
-    Boolean deleteTask(Long taskId);
+    Integer deleteTask(Long taskId);
 }

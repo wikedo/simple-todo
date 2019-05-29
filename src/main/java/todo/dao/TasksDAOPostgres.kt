@@ -20,8 +20,8 @@ class TasksDAOPostgres(val jdbcTemplate: JdbcTemplate): TasksDAO {
         return null
     }
 
-    override fun deleteTask(taskId: Long?): Boolean? {
-        return false
+    override fun deleteTask(taskId: Long): Int {
+        return deleteTask(jdbcTemplate, taskId)
     }
 
 }
