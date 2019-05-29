@@ -1,15 +1,15 @@
 package todo.service
 
-import todo.model.Task
+import todo.model.TaskApi
 
 interface TasksService {
-    fun getTaskById(id: Long): Task?
+    fun getTaskById(id: Long): TaskApi.Out.Task?
 
-    fun listAllTasks(): List<Task>
+    fun listAllTasks(): List<TaskApi.Out.Task>
 
-    fun createTask(task: Task): Int?
+    fun createTask(task: TaskApi.In.NewTask): Int?
 
-    fun updateTask(id: Long): Task?
+    fun updateTask(id: Long): TaskApi.Out.Task?
 
     fun deleteTask(id: Long): Boolean
 }

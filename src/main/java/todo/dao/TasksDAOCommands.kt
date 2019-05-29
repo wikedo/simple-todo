@@ -3,16 +3,18 @@ package todo.dao
 import org.springframework.dao.EmptyResultDataAccessException
 import org.springframework.jdbc.core.JdbcTemplate
 import todo.model.Status
-import todo.model.Task
+import todo.model.TaskApi
 import java.sql.ResultSet
 
-val rowMapper: (ResultSet, Int) -> Task = { rs, i ->
-    Task(rs.getLong("id"),
+val rowMapper: (ResultSet, Int) -> TaskApi.Out.Task = { rs, i ->
+    TaskApi.Out.Task(
+        rs.getLong("id"),
         rs.getString("text"),
-        Status.getById(rs.getInt("status")))
+        Status.getById(rs.getInt("status"))
+    )
 }
 
-fun getTaskById(jdbcTemplate: JdbcTemplate, taskId: Long): Task? {
+fun getTaskById(jdbcTemplate: JdbcTemplate, taskId: Long): TaskApi.Out.Task? {
 
     val sql = """
         SELECT id, text, status
@@ -26,7 +28,7 @@ fun getTaskById(jdbcTemplate: JdbcTemplate, taskId: Long): Task? {
     }
 }
 
-fun listAllTasks(jdbcTemplate: JdbcTemplate): List<Task> {
+fun listAllTasks(jdbcTemplate: JdbcTemplate): List<TaskApi.Out.Task> {
 
     val sql = """
         SELECT id, text, status
@@ -36,7 +38,7 @@ fun listAllTasks(jdbcTemplate: JdbcTemplate): List<Task> {
     return jdbcTemplate.query(sql, rowMapper)
 }
 
-fun createTask(jdbcTemplate: JdbcTemplate, task: Task): Int {
+fun createTask(jdbcTemplate: JdbcTemplate, task: TaskApi.In.NewTask): Int {
 
     val sql = """
         INSERT

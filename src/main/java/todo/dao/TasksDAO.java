@@ -1,17 +1,17 @@
 package todo.dao;
 
-import todo.model.Task;
+import todo.model.TaskApi;
 
 import java.util.List;
 
 public interface TasksDAO {
-    Task getTaskById(Long taskId);
+    TaskApi.Out.Task getTaskById(Long taskId);
 
-    List<Task> listAllTasks();
+    List<TaskApi.Out.Task> listAllTasks();
 
-    Integer createTask(Task task);
+    Integer createTask(TaskApi.In.NewTask task);
 
-    Task updateTask(Long taskId);
+    TaskApi.Out.Task updateTask(Long taskId);
 
     Boolean deleteTask(Long taskId);
 }

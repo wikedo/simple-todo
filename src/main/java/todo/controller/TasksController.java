@@ -3,7 +3,7 @@ package todo.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import todo.model.Task;
+import todo.model.TaskApi;
 import todo.service.TasksService;
 
 import javax.validation.constraints.Null;
@@ -28,7 +28,7 @@ public class TasksController {
     }
 
     @RequestMapping(path = "/", method = RequestMethod.POST, headers = {"Content-type=application/json"})
-    public ResponseEntity createTask(@RequestBody Task task) {
+    public ResponseEntity createTask(@RequestBody TaskApi.In.NewTask task) {
         return ResponseEntity.ok(tasksService.createTask(task));
     }
 

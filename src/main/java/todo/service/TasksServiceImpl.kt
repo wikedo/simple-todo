@@ -1,22 +1,22 @@
 package todo.service
 
 import todo.dao.TasksDAO
-import todo.model.Task
+import todo.model.TaskApi
 
 class TasksServiceImpl(private val tasksDAO: TasksDAO) : TasksService {
-    override fun getTaskById(id: Long): Task? {
+    override fun getTaskById(id: Long): TaskApi.Out.Task? {
         return tasksDAO.getTaskById(id)
     }
 
-    override fun listAllTasks(): List<Task> {
+    override fun listAllTasks(): List<TaskApi.Out.Task> {
         return tasksDAO.listAllTasks()
     }
 
-    override fun createTask(task: Task): Int {
+    override fun createTask(task: TaskApi.In.NewTask): Int {
         return tasksDAO.createTask(task)
     }
 
-    override fun updateTask(id: Long): Task? {
+    override fun updateTask(id: Long): TaskApi.Out.Task? {
         return tasksDAO.updateTask(id)
     }
 
