@@ -7,7 +7,7 @@ interface TasksService {
 
     fun listAllTasks(): List<TaskApi.Out.Task>
 
-    fun createTask(task: TaskApi.In.NewTask): Int?
+    fun createTask(task: TaskApi.In.NewTask): Long?
 
     fun updateTask(taskId: Long, task: TaskApi.In.UpdatedTask): Int
 

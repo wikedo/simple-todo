@@ -9,7 +9,7 @@ public interface TasksDAO {
 
     List<TaskApi.Out.Task> listAllTasks();
 
-    Integer createTask(TaskApi.In.NewTask task);
+    Long createTask(TaskApi.In.NewTask task);
 
     Integer updateTask(Long taskId, TaskApi.In.UpdatedTask task);
 
