@@ -3,7 +3,7 @@ package todo.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import todo.model.TaskApi;
+import todo.TaskApi;
 import todo.service.TasksService;
 
 import javax.validation.constraints.Null;

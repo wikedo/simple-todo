@@ -1,7 +1,7 @@
 package todo.service
 
 import todo.dao.TasksDAO
-import todo.model.TaskApi
+import todo.TaskApi
 
 class TasksServiceImpl(private val tasksDAO: TasksDAO) : TasksService {
     override fun getTaskById(id: Long): TaskApi.Out.Task? {

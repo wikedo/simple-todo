@@ -2,8 +2,8 @@ package todo.dao
 
 import org.springframework.dao.EmptyResultDataAccessException
 import org.springframework.jdbc.core.JdbcTemplate
-import todo.model.Status
-import todo.model.TaskApi
+import todo.Status
+import todo.TaskApi
 import java.sql.ResultSet
 
 val rowMapper: (ResultSet, Int) -> TaskApi.Out.Task = { rs, i ->

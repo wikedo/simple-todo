@@ -1,6 +1,6 @@
 package todo.dao;
 
-import todo.model.TaskApi;
+import todo.TaskApi;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package todo.model
+package todo
 
 enum class Status(val statusCode: Int) {
     TODO(0),

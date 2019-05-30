@@ -1,7 +1,7 @@
 package todo.dao
 
 import org.springframework.jdbc.core.JdbcTemplate
-import todo.model.TaskApi
+import todo.TaskApi
 
 class TasksDAOPostgres(val jdbcTemplate: JdbcTemplate): TasksDAO {
     override fun getTaskById(taskId: Long): TaskApi.Out.Task? {

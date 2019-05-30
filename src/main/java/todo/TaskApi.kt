@@ -1,4 +1,4 @@
-package todo.model
+package todo
 
 interface TaskApi {
 

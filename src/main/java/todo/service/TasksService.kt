@@ -1,6 +1,6 @@
 package todo.service
 
-import todo.model.TaskApi
+import todo.TaskApi
 
 interface TasksService {
     fun getTaskById(id: Long): TaskApi.Out.Task?
