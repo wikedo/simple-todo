@@ -13,6 +13,7 @@ class TasksDAOPostgres(val jdbcTemplate: JdbcTemplate): TasksDAO {
     }
 
     override fun createTask(task: TaskApi.In.NewTask): Long? {
+        System.out.println(task)
         return createTask(jdbcTemplate, task)
     }
 

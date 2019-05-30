@@ -1,6 +1,5 @@
 package todo.model;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import todo.Status;
 
@@ -10,7 +9,7 @@ public class StatusTest {
 
     @Test
     public void getById() {
-        Assertions.assertThat(Status.getById(0)).isEqualTo(Status.TODO);
+        assertThat(Status.getById(0)).isEqualTo(Status.TODO);
         assertThat(Status.getById(1)).isEqualTo(Status.DONE);
         assertThat(Status.getById(2)).isEqualTo(Status.BLOCKED);
         assertThat(Status.getById(3)).isEqualTo(Status.POSTPONED);
