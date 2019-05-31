@@ -18,6 +18,6 @@ public class StatusTest {
 
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void getById_throwsArrayIndexOutOfBoundsException() {
-        Status.getById(-1);
+        Status.getById(999999);
     }
 }
